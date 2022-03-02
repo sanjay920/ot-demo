@@ -1,0 +1,3 @@
+[submodule "opni-opensearch-operator"]
+	path = opni-opensearch-operator
+	url = git@github.com:rancher-sandbox/opni-opensearch-operator.git
