@@ -1,6 +1,14 @@
 # ot-demo
 
 ### Step 1
+Install demo application
+```
+kubectl create -f microservices-demo.yaml
+```
+
+___
+
+### Step 2
 Install opensearch
 https://github.com/rancher-sandbox/opni-opensearch-operator
 
@@ -17,7 +25,7 @@ Take note of the `name` of the opensearch cluster you configure
 
 ___
 
-### Step 2
+### Step 3
 Install dataprepper
 * set opensearch client url with your cluster's name
   * line 58, 86
@@ -30,7 +38,7 @@ kubectl create -f data_prepper.yaml
 
 ___
 
-### Step 3
+### Step 4
 Install opentelemetry-collector
 
 ```
