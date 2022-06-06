@@ -55,10 +55,10 @@ data:
       sink:
         - opensearch:
             hosts:
-              - "https://ot-os-os-client.default.svc:9200"
+              - <opensearch-url>
             insecure: true
             username: admin
-            password: <opensearch_admin_password>
+            password: <password>
             trace_analytics_raw: true
         - stdout:
     service-map-pipeline:
@@ -83,10 +83,10 @@ data:
       sink:
         - opensearch:
             hosts:
-              - "https://ot-os-os-client.default.svc:9200"
+              - <opensearch-url>
             insecure: true
             username: admin
-            password: <opensearch_admin_password>
+            password: <password>
             trace_analytics_service_map: true
         - stdout:
   data-prepper-config.yaml: |
@@ -156,7 +156,7 @@ spec:
             - /etc/data-prepper/pipelines.yaml
             - /etc/data-prepper/data-prepper-config.yaml
             - -Dlog4j.configurationFile=config/log4j2.properties
-          image: opensearchproject/data-prepper:latest
+          image: opensearchproject/data-prepper:1.2.1
           imagePullPolicy: IfNotPresent
           name: data-prepper
           resources:

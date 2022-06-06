@@ -42,10 +42,10 @@ ports:
   zipkin:
     enabled: false
 
-k8sProcessor:
-  rbac:
-    name: "microservices-tagger"
-    create: true
+# k8sProcessor:
+#   rbac:
+#     name: "microservices-tagger"
+#     create: true
 
 serviceAccount:
   create: true
