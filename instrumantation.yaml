@@ -1,0 +1,23 @@
+apiVersion: opentelemetry.io/v1alpha1
+kind: Instrumentation
+metadata:
+  name: my-instrumentation
+spec:
+  exporter:
+    endpoint: http://opentelemetry-collector:4317
+  propagators:
+    - tracecontext
+    - baggage
+    - b3
+  sampler:
+    type: parentbased_traceidratio
+    argument: "1"
+  java:
+    image: ghcr.io/open-telemetry/opentelemetry-operator/autoinstrumentation-java:latest
+  nodejs:
+    image: ghcr.io/open-telemetry/opentelemetry-operator/autoinstrumentation-nodejs:latest
+  python:
+    env:
+      - name: OTEL_EXPORTER_OTLP_TRACES_ENDPOINT
+        value: http://opentelemetry-collector:4318/v1/traces
+    image: ghcr.io/open-telemetry/opentelemetry-operator/autoinstrumentation-python:latest

@@ -1,11 +1,32 @@
 # ot-demo
 
 ### Step 1
+
+#### Manual Instrumentation
 Install demo application
 ```
 kubectl create -f microservices-demo.yaml
 ```
 
+#### Auto Instrumentation (only work for python nodejs and java at this moment)
+Install cert manager
+```
+kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.8.2/cert-manager.yaml
+```
+install otel operator
+```
+kubectl apply -f https://github.com/open-telemetry/opentelemetry-operator/releases/latest/download/opentelemetry-operator.yaml
+```
+install instrumentation
+```
+kubectl apply -f instrumantation.yaml
+```
+Install demo application
+```
+kubectl create -f boutique-auto-instrumantation.yaml
+```
+
+ref: https://github.com/open-telemetry/opentelemetry-operator
 ___
 
 ### Step 2
