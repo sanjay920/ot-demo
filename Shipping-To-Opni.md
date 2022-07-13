@@ -1,10 +1,11 @@
 # Shipping traces to Opni
 
 
-### Step 1
-have a cluster ready with Opni installed.
+### Prerequisites
+have a central cluster ready with Opni installed.
+have a client cluster to install workload microservices and to ship traces to the central cluster. All the following steps should be done in the client cluster.
 
-### Step 2
+### Step 1
 
 #### Manual Instrumentation
 Install demo application
@@ -35,7 +36,7 @@ ___
 
 ___
 
-### Step 3
+### Step 2
 Install dataprepper
 * set opensearch client url with Your Opni's opensearch external URL.
   * line 58, 86
@@ -48,7 +49,7 @@ kubectl create -f data_prepper.yaml
 
 ___
 
-### Step 4
+### Step 3
 Install opentelemetry-collector
 
 ```
